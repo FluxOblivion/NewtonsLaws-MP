@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2996d32752241664ebe57f35bc5d1fe6, type: 3}
+  m_Name: L01 - 01
+  m_EditorClassIdentifier: 
+  lessonTitle: 'L01: Introduction'
+  lessonText: 'Welcome to Newton''s Laws!
+
+    In this lesson, we will be showing
+    you three of the fundamental laws of motion; showing how they work, and why they
+    are important.
+
+
+    You can proceed through the lesson by pressing the ''Next''
+    button, though feel free to go over the previous sections with the ''Back'' button.'
