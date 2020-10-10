@@ -6,6 +6,13 @@ using TMPro;
 
 public class LessonManager : MonoBehaviour
 {
+    public static LessonManager current;
+
+    private void Awake()
+    {
+        current = this;
+    }
+
     //Will have to replace with more robust system later
     public Lesson currentLesson;
     LessonSlide currentSlide;
@@ -43,6 +50,8 @@ public class LessonManager : MonoBehaviour
 
             currentSlideBox.text = (slideCount + 1).ToString();
             slideCount++;
+
+            GameEvents.current.TriggerSlideChange(slideCount);
         }
     }
 
@@ -60,6 +69,8 @@ public class LessonManager : MonoBehaviour
 
             currentSlideBox.text = slideCount.ToString();
             slideCount--;
+
+            GameEvents.current.TriggerSlideChange(slideCount);
         }
     }
 }

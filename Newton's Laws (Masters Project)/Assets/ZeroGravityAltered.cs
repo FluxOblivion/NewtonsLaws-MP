@@ -8,6 +8,7 @@ namespace SimplePhysicsToolkit
     {
 
         public bool onlyAffectInteractableItems = false;
+        List<Collider> affectedObjects;
 
         void Start()
         {
@@ -27,6 +28,7 @@ namespace SimplePhysicsToolkit
                     {
                         other.GetComponent<Rigidbody>().useGravity = false;
                         other.GetComponent<Rigidbody>().drag = 0f; //Reset Drag
+                        affectedObjects.Add(other);
                     }
                 }
                 else
@@ -55,6 +57,18 @@ namespace SimplePhysicsToolkit
                     other.GetComponent<Rigidbody>().drag = 0.0f; //Reset Drag
                 }
             }
+        }
+
+        public void onToggle()
+        {
+            Collider[] hitColliders = Physics.OverlapBox(gameObject.transform.position, transform.localScale / 2, Quaternion.identity);
+
+            foreach(Collider i in hitColliders)
+            {
+                i.GetComponent<Rigidbody>().useGravity = true;
+                i.GetComponent<Rigidbody>().drag = 0.0f; //Reset Drag
+            }
+
         }
 
         void OnDrawGizmos()

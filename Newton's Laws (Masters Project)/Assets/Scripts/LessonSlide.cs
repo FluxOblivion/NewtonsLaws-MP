@@ -10,5 +10,7 @@ public class LessonSlide : ScriptableObject
     public string lessonTitle;
     [TextArea(5,10)]
     public string lessonText;
+
+    public bool playerRequirement = false;
     
 }

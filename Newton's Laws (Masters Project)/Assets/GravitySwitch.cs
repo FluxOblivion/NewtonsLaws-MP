@@ -5,22 +5,25 @@ using SimplePhysicsToolkit;
 
 public class GravitySwitch : MonoBehaviour
 {
-    public ZeroGravity gravityController;
+    public ZeroGravityAltered gravityController;
     
     // Start is called before the first frame update
     void Start()
     {
-        gravityController = GetComponent<ZeroGravity>();
+        gravityController = GetComponent<ZeroGravityAltered>();
     }
 
     public void ToggleGravity()
     {
         if (gravityController.enabled == true)
         {
+            gravityController.onToggle();
             gravityController.enabled = false;
+            Debug.Log("Gravity Disabled.");
         } else
         {
             gravityController.enabled = true;
+            Debug.Log("Gravity Enabled.");
         }
     }
 }

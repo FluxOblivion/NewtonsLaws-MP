@@ -6,8 +6,14 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Scenes/Start Level.unity
+    guid: a7a995dbad0ce7a43b9bf19b5c54928f
+  - enabled: 1
+    path: Assets/Scenes/Test Level.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/Inertia Level.unity
+    guid: cbe3837858a29024b9694eae9e970ebe
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: fe7f7e1047f00fc4386a98d9d0ef9955,
       type: 2}

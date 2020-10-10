@@ -13,4 +13,7 @@ MonoBehaviour:
   m_Name: L01 - 02
   m_EditorClassIdentifier: 
   lessonTitle: 'L01: Newton''s Laws'
-  lessonText: Sample Text.
+  lessonText: The Event system is still being properly implemented, but with a little
+    more code there should be objects spawning/despawning with slide changes and
+    the option to not progress until the player has completed a specific action.
+  playerRequirement: 0
