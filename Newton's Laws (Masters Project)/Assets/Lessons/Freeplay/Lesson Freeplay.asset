@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccbbe28fba809ce4eb93f21fb5d8fd69, type: 3}
+  m_Name: Lesson Freeplay
+  m_EditorClassIdentifier: 
+  slides:
+  - {fileID: 11400000, guid: c9a8372f76c72c34aa700c8d09552d57, type: 2}
+  - {fileID: 11400000, guid: 3ed08085d3cdc184aab0e92d932dbbe0, type: 2}
+  - {fileID: 11400000, guid: 5ddf7b78d46cf4e4faa76d5b48762fb2, type: 2}

@@ -6,6 +6,7 @@ namespace SimplePhysicsToolkit
 {
     public class ZeroGravityAltered : MonoBehaviour
     {
+        public bool gravityEnabled = false;
 
         public bool onlyAffectInteractableItems = false;
         List<Collider> affectedObjects;
@@ -59,14 +60,65 @@ namespace SimplePhysicsToolkit
             }
         }
 
+        private void OnTriggerStay(Collider other)
+        {
+            if (gravityEnabled == true)
+            {
+                if (other.GetComponent<Rigidbody>().useGravity && other.GetComponent<Rigidbody>().useGravity == false)
+                {
+                    if (onlyAffectInteractableItems)
+                    {
+                        if (other.GetComponent<InteractableItem>()) 
+                        {
+                            other.GetComponent<Rigidbody>().useGravity = true;
+                            other.GetComponent<Rigidbody>().drag = 0.0f; //Reset Drag
+                        }
+                    }
+                    else
+                    {
+                        other.GetComponent<Rigidbody>().useGravity = true;
+                        other.GetComponent<Rigidbody>().drag = 0.0f; //Reset Drag
+                    }
+                }
+            } else
+            {
+                if (other.GetComponent<Rigidbody>().useGravity && other.GetComponent<Rigidbody>().useGravity == true)
+                {
+                    if (onlyAffectInteractableItems)
+                    {
+                        if (other.GetComponent<InteractableItem>())
+                        {
+                            other.GetComponent<Rigidbody>().useGravity = false;
+                            other.GetComponent<Rigidbody>().drag = 0f; //Reset Drag
+                            affectedObjects.Add(other);
+                        }
+                    }
+                    else
+                    {
+                        other.GetComponent<Rigidbody>().useGravity = false;
+                        other.GetComponent<Rigidbody>().drag = 0f; //Reset Drag
+                    }
+                }
+            }
+        }
+
         public void onToggle()
         {
-            Collider[] hitColliders = Physics.OverlapBox(gameObject.transform.position, transform.localScale / 2, Quaternion.identity);
+            //Change to simple variable toggle, implement OnTriggerStay function to check variable?
+            //Collider[] hitColliders = Physics.OverlapBox(gameObject.transform.position, transform.localScale / 2, Quaternion.identity);
 
-            foreach(Collider i in hitColliders)
+            //foreach(Collider i in hitColliders)
+            //{
+            //    i.GetComponent<Rigidbody>().useGravity = true;
+            //    i.GetComponent<Rigidbody>().drag = 0.0f; //Reset Drag
+            //}
+
+            if (gravityEnabled == false)
             {
-                i.GetComponent<Rigidbody>().useGravity = true;
-                i.GetComponent<Rigidbody>().drag = 0.0f; //Reset Drag
+                gravityEnabled = true;
+            } else
+            {
+                gravityEnabled = false;
             }
 
         }
